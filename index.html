@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>วิทยาลัยเทคโนโลยีโปลิเทคนิคลานนา เชียงใหม่</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: #f4f6f9; color: #333; }
+        header { background-color: #003366; color: white; padding: 15px 5%; text-align: center; }
+        nav { background-color: #002244; display: flex; justify-content: center; flex-wrap: wrap; }
+        nav a { color: white; padding: 12px 20px; text-decoration: none; display: block; }
+        nav a:hover { background-color: #0055a5; }
+        .container { padding: 20px 5%; min-height: 400px; }
+        .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 15px; }
+        .card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        footer { background-color: #222; color: #ccc; text-align: center; padding: 15px; font-size: 0.9em; margin-top: 20px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>[ โลโก้ ] วิทยาลัยเทคโนโลยีโปลิเทคนิคลานนา เชียงใหม่</h1>
+    </header>
+
+    <nav>
+        <a href="#home">หน้าหลัก</a>
+        <a href="#executives">ข้อมูลผู้บริหาร</a>
+        <a href="#personnel">ข้อมูลบุคลากร</a>
+        <a href="#students">ข้อมูลนักเรียน/นักศึกษา</a>
+        <a href="#programs">สาขาวิชาที่เปิดสอน</a>
+    </nav>
+
+    <div class="container">
+        
+        <section id="home">
+            <h2>หน้าหลัก (Home)</h2>
+            <div class="card" style="margin-top: 10px;">
+                <h3>ข่าวประชาสัมพันธ์</h3>
+                <p>- ข่าวรับสมัครนักเรียน/นักศึกษา</p>
+                <p>- ประกาศจากสถานศึกษา</p>
+            </div>
+        </section>
+
+        <hr style="margin: 30px 0;">
+
+        <section id="executives">
+            <h2>ข้อมูลผู้บริหาร</h2>
+            <div class="card" style="margin-top: 10px;">
+                <h3>ทำเนียบผู้บริหาร</h3>
+                <p>ผู้อำนวยการ / ผู้จัดการสถานศึกษา</p>
+                <p>วิสัยทัศน์: มุ่งมั่นพัฒนาการศึกษาสู่อนาคต</p>
+            </div>
+        </section>
+
+        <hr style="margin: 30px 0;">
+
+        <section id="personnel">
+            <h2>ข้อมูลบุคลากร</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <h4>กลุ่มสาระ / แผนกวิชา</h4>
+                    <p>ค้นหาตามรายชื่อและแผนกวิชา</p>
+                </div>
+            </div>
+        </section>
+
+        <hr style="margin: 30px 0;">
+
+        <section id="students">
+            <h2>ข้อมูลนักเรียน นักศึกษา</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <h4>สถิติภาพรวม</h4>
+                    <p>จำนวนนักเรียนทั้งหมดแยกตามระดับชั้นและสาขาวิชา</p>
+                </div>
+            </div>
+        </section>
+
+        <hr style="margin: 30px 0;">
+
+        <section id="programs">
+            <h2>สาขาวิชาที่เปิดสอน</h2>
+            <div class="card-grid">
+                <div class="card"><h4>เทคโนโลยีสารสนเทศ</h4></div>
+                <div class="card"><h4>ช่างยนต์ / ยานยนต์ไฟฟ้า (EV)</h4></div>
+                <div class="card"><h4>การบัญชี / การตลาด</h4></div>
+                <div class="card"><h4>การท่องเที่ยว / การโรงแรม</h4></div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>2 ถนนสุขเกษม ต.ป่าตัน อ.เมือง จ.เชียงใหม่ 50300 | www.lannapoly.ac.th</p>
+        <p>สงวนลิขสิทธิ์ © วิทยาลัยเทคโนโลยีโปลิเทคนิคลานนา เชียงใหม่</p>
+        <p><small>จัดทำโดย นายอภิรักษ์ มุกดา (IT3102 เลขที่ 18)</small></p>
+    </footer>
+
+</body>
+</html>
