@@ -350,3 +350,20 @@ footer {
     .nav-menu { flex-direction: column; }
     .nav-item { width: 100%; text-align: center; justify-content: center; }
 }
+
+.avatar-circle {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 15px auto;
+    border-radius: 50%;
+    border: 3px solid #0d7a5f;
+    padding: 3px;
+    background-color: #fff;
+}
+
+.person-card .person-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
