@@ -7,7 +7,7 @@
     <!-- Google Fonts & Font Awesome Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- เชื่อมโยงไฟล์ CSS ที่แยกไว้นอก -->
+    <!-- เชื่อมโยงไฟล์ CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -75,7 +75,7 @@
             <div class="card" style="text-align: center; max-width: 500px; margin: 0 auto 30px auto;">
                 <img src="https://via.placeholder.com/150" style="border-radius: 50%; margin-bottom: 15px;" alt="ผู้อำนวยการ">
                 <h3>ผู้อำนวยการ / ผู้จัดการสถานศึกษา</h3>
-                <p style="color: var(--accent-green); font-weight: 600;">วิทยาลัยเทคโนโลยีโปลิเทคนิคลานนา</p>
+                <p style="color: var(--accent-green); font-weight: 600;">วิทยาลัยเทคโนโลยีโปลิเทคนิคลานนา เชียงใหม่</p>
                 <p style="margin-top: 10px; font-style: italic; color: var(--text-muted);">"มุ่งมั่นสร้างนวัตกรรมทางการศึกษา พัฒนาเยาวชนสู่มืออาชีพในอนาคต"</p>
             </div>
 
@@ -98,32 +98,105 @@
 
         <!-- 3) ข้อมูลบุคลากร (Personnel) -->
         <div id="personnel" class="tab-content">
-            <h2 class="section-title">บุคลากรครูและเจ้าหน้าที่</h2>
-            <div class="card" style="margin-bottom: 20px;">
-                <input type="text" placeholder="🔍 ค้นหาตามชื่อ หรือ แผนกวิชา..." style="width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 5px;">
+            <h2 class="section-title">ทำเนียบบุคลากรครูและเจ้าหน้าที่</h2>
+
+            <!-- ตัวกรองและแถบค้นหา -->
+            <div class="filter-box">
+                <input type="text" id="searchInput" onkeyup="filterPersonnel()" placeholder="🔍 ค้นหาตามชื่อ-นามสกุล หรือ ตำแหน่ง...">
+                <select id="departmentFilter" onchange="filterPersonnel()">
+                    <option value="all">แสดงทุกแผนกวิชา</option>
+                    <option value="it">สาขาวิชาเทคโนโลยีสารสนเทศ</option>
+                    <option value="auto">สาขาวิชาช่างยนต์ / ยานยนต์ไฟฟ้า (EV)</option>
+                    <option value="power">สาขาวิชาช่างไฟฟ้ากำลัง</option>
+                    <option value="acc">สาขาวิชาการบัญชี / การตลาด</option>
+                    <option value="hotel">สาขาวิชาการท่องเที่ยวและการโรงแรม</option>
+                </select>
             </div>
 
-            <div class="grid-4">
-                <div class="card" style="text-align: center;">
-                    <i class="fa-solid fa-laptop-code card-icon"></i>
-                    <h4>แผนกเทคโนโลยีสารสนเทศ</h4>
-                    <p style="font-size: 0.9rem; color: var(--text-muted);">ครูประจำแผนก 12 ท่าน</p>
+            <!-- สรุปจำนวนบุคลากร -->
+            <div class="grid-4" style="margin-bottom: 25px;">
+                <div class="stat-card">
+                    <div class="stat-number">120+</div>
+                    <p>ครูประจำการทั้งหมด</p>
                 </div>
-                <div class="card" style="text-align: center;">
-                    <i class="fa-solid fa-wrench card-icon"></i>
-                    <h4>แผนกช่างยนต์ / EV</h4>
-                    <p style="font-size: 0.9rem; color: var(--text-muted);">ครูประจำแผนก 15 ท่าน</p>
+                <div class="stat-card">
+                    <div class="stat-number">45</div>
+                    <p>กลุ่มช่างอุตสาหกรรม</p>
                 </div>
-                <div class="card" style="text-align: center;">
-                    <i class="fa-solid fa-calculator card-icon"></i>
-                    <h4>แผนกการบัญชีและการตลาด</h4>
-                    <p style="font-size: 0.9rem; color: var(--text-muted);">ครูประจำแผนก 10 ท่าน</p>
+                <div class="stat-card">
+                    <div class="stat-number">35</div>
+                    <p>กลุ่มบริหารธุรกิจและท่องเที่ยว</p>
                 </div>
-                <div class="card" style="text-align: center;">
-                    <i class="fa-solid fa-concierge-bell card-icon"></i>
-                    <h4>แผนกการท่องเที่ยว-โรงแรม</h4>
-                    <p style="font-size: 0.9rem; color: var(--text-muted);">ครูประจำแผนก 8 ท่าน</p>
+                <div class="stat-card">
+                    <div class="stat-number">40</div>
+                    <p>หมวดวิชาสัมพันธ์ / เจ้าหน้าที่</p>
                 </div>
+            </div>
+
+            <!-- รายการบุคลากรแบบการ์ด -->
+            <div class="grid-4" id="personnelGrid">
+                
+                <!-- แผนก IT -->
+                <div class="card person-card" data-dept="it">
+                    <img src="https://via.placeholder.com/120?text=IT+Teacher" alt="อาจารย์บุษราภรณ์ ทัพธานี" class="person-img">
+                    <div class="person-name">อาจารย์บุษราภรณ์ ทัพธานี</div>
+                    <div class="person-role">อาจารย์ประจำสาขา / ผู้สอน</div>
+                    <div class="person-dept"><i class="fa-solid fa-laptop-code"></i> เทคโนโลยีสารสนเทศ</div>
+                    <div class="person-contact"><i class="fa-solid fa-envelope"></i> bussaraporn@lannapoly.ac.th</div>
+                </div>
+
+                <div class="card person-card" data-dept="it">
+                    <img src="https://via.placeholder.com/120?text=IT+Teacher" alt="อาจารย์ประจำสาขา IT" class="person-img">
+                    <div class="person-name">อาจารย์สมชาย พัฒนระบบ</div>
+                    <div class="person-role">หัวหน้าสาขาวิชา</div>
+                    <div class="person-dept"><i class="fa-solid fa-laptop-code"></i> เทคโนโลยีสารสนเทศ</div>
+                    <div class="person-contact"><i class="fa-solid fa-envelope"></i> somchai@lannapoly.ac.th</div>
+                </div>
+
+                <!-- แผนกช่างยนต์ / EV -->
+                <div class="card person-card" data-dept="auto">
+                    <img src="https://via.placeholder.com/120?text=Auto+Teacher" alt="อาจารย์ประจำสาขาช่างยนต์" class="person-img">
+                    <div class="person-name">อาจารย์วิชาญ ยานยนต์</div>
+                    <div class="person-role">หัวหน้าสาขาวิชา</div>
+                    <div class="person-dept"><i class="fa-solid fa-car-battery"></i> ช่างยนต์ / EV</div>
+                    <div class="person-contact"><i class="fa-solid fa-envelope"></i> wichan@lannapoly.ac.th</div>
+                </div>
+
+                <div class="card person-card" data-dept="auto">
+                    <img src="https://via.placeholder.com/120?text=Auto+Teacher" alt="อาจารย์ประจำสาขาช่างยนต์" class="person-img">
+                    <div class="person-name">อาจารย์ธีรภัทร เครื่องกล</div>
+                    <div class="person-role">อาจารย์ประจำสาขา</div>
+                    <div class="person-dept"><i class="fa-solid fa-car-battery"></i> ช่างยนต์ / EV</div>
+                    <div class="person-contact"><i class="fa-solid fa-envelope"></i> teerapat@lannapoly.ac.th</div>
+                </div>
+
+                <!-- แผนกช่างไฟฟ้ากำลัง -->
+                <div class="card person-card" data-dept="power">
+                    <img src="https://via.placeholder.com/120?text=Elec+Teacher" alt="อาจารย์ประจำสาขาไฟฟ้า" class="person-img">
+                    <div class="person-name">อาจารย์อนันต์ ไฟฟ้า</div>
+                    <div class="person-role">หัวหน้าสาขาวิชา</div>
+                    <div class="person-dept"><i class="fa-solid fa-bolt"></i> ไฟฟ้ากำลัง</div>
+                    <div class="person-contact"><i class="fa-solid fa-envelope"></i> anan@lannapoly.ac.th</div>
+                </div>
+
+                <!-- แผนกการบัญชี / การตลาด -->
+                <div class="card person-card" data-dept="acc">
+                    <img src="https://via.placeholder.com/120?text=Bus+Teacher" alt="อาจารย์ประจำสาขาการบัญชี" class="person-img">
+                    <div class="person-name">อาจารย์นภา บริหารธุรกิจ</div>
+                    <div class="person-role">หัวหน้าสาขาวิชา</div>
+                    <div class="person-dept"><i class="fa-solid fa-calculator"></i> การบัญชี & การตลาด</div>
+                    <div class="person-contact"><i class="fa-solid fa-envelope"></i> napa@lannapoly.ac.th</div>
+                </div>
+
+                <!-- แผนกการท่องเที่ยว-โรงแรม -->
+                <div class="card person-card" data-dept="hotel">
+                    <img src="https://via.placeholder.com/120?text=Hotel+Teacher" alt="อาจารย์ประจำสาขาการท่องเที่ยว" class="person-img">
+                    <div class="person-name">อาจารย์ปรียา บริการดี</div>
+                    <div class="person-role">หัวหน้าสาขาวิชา</div>
+                    <div class="person-dept"><i class="fa-solid fa-hotel"></i> การท่องเที่ยว-โรงแรม</div>
+                    <div class="person-contact"><i class="fa-solid fa-envelope"></i> preeya@lannapoly.ac.th</div>
+                </div>
+
             </div>
         </div>
 
@@ -244,18 +317,7 @@
         </div>
     </footer>
 
-    <!-- JavaScript สำหรับสลับ Tab หน้าจอ -->
-    <script>
-        function switchTab(tabId, element) {
-            const tabContents = document.querySelectorAll('.tab-content');
-            tabContents.forEach(tab => tab.classList.remove('active'));
-
-            const navItems = document.querySelectorAll('.nav-item');
-            navItems.forEach(item => item.classList.remove('active'));
-
-            document.getElementById(tabId).classList.add('active');
-            element.classList.add('active');
-        }
-    </script>
+    <!-- เชื่อมโยงไฟล์ JavaScript -->
+    <script src="script.js"></script>
 </body>
 </html>
