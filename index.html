@@ -4,98 +4,258 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>วิทยาลัยเทคโนโลยีโปลิเทคนิคลานนา เชียงใหม่</title>
-    <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        body { background-color: #f4f6f9; color: #333; }
-        header { background-color: #003366; color: white; padding: 15px 5%; text-align: center; }
-        nav { background-color: #002244; display: flex; justify-content: center; flex-wrap: wrap; }
-        nav a { color: white; padding: 12px 20px; text-decoration: none; display: block; }
-        nav a:hover { background-color: #0055a5; }
-        .container { padding: 20px 5%; min-height: 400px; }
-        .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 15px; }
-        .card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        footer { background-color: #222; color: #ccc; text-align: center; padding: 15px; font-size: 0.9em; margin-top: 20px; }
-    </style>
+    <!-- Google Fonts & Font Awesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- เชื่อมโยงไฟล์ CSS ที่แยกไว้นอก -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <!-- ส่วนหัว (Header) -->
     <header>
-        <h1>[ โลโก้ ] วิทยาลัยเทคโนโลยีโปลิเทคนิคลานนา เชียงใหม่</h1>
+        <div class="logo-container">
+            <img src="logo.jpg" alt="โลโก้สถานศึกษา" onerror="this.src='https://via.placeholder.com/65?text=LOGO'">
+            <div>
+                <h1>วิทยาลัยเทคโนโลยีโปลิเทคนิคลานนา เชียงใหม่</h1>
+                <p>Lanna Polytechnic Chiangmai Technological College</p>
+            </div>
+        </div>
     </header>
 
+    <!-- เมนูนำทาง (Navigation Bar) -->
     <nav>
-        <a href="#home">หน้าหลัก</a>
-        <a href="#executives">ข้อมูลผู้บริหาร</a>
-        <a href="#personnel">ข้อมูลบุคลากร</a>
-        <a href="#students">ข้อมูลนักเรียน/นักศึกษา</a>
-        <a href="#programs">สาขาวิชาที่เปิดสอน</a>
+        <ul class="nav-menu">
+            <li class="nav-item active" onclick="switchTab('home', this)"><i class="fa-solid fa-house"></i> หน้าหลัก</li>
+            <li class="nav-item" onclick="switchTab('executives', this)"><i class="fa-solid fa-user-tie"></i> ข้อมูลผู้บริหาร</li>
+            <li class="nav-item" onclick="switchTab('personnel', this)"><i class="fa-solid fa-users"></i> ข้อมูลบุคลากร</li>
+            <li class="nav-item" onclick="switchTab('students', this)"><i class="fa-solid fa-user-graduate"></i> ข้อมูลนักเรียน/นักศึกษา</li>
+            <li class="nav-item" onclick="switchTab('programs', this)"><i class="fa-solid fa-book-open"></i> สาขาวิชาที่เปิดสอน</li>
+        </ul>
     </nav>
 
+    <!-- ส่วนเนื้อหาหลัก (Content Area) -->
     <div class="container">
-        
-        <section id="home">
-            <h2>หน้าหลัก (Home)</h2>
-            <div class="card" style="margin-top: 10px;">
-                <h3>ข่าวประชาสัมพันธ์</h3>
-                <p>- ข่าวรับสมัครนักเรียน/นักศึกษา</p>
-                <p>- ประกาศจากสถานศึกษา</p>
-            </div>
-        </section>
 
-        <hr style="margin: 30px 0;">
-
-        <section id="executives">
-            <h2>ข้อมูลผู้บริหาร</h2>
-            <div class="card" style="margin-top: 10px;">
-                <h3>ทำเนียบผู้บริหาร</h3>
-                <p>ผู้อำนวยการ / ผู้จัดการสถานศึกษา</p>
-                <p>วิสัยทัศน์: มุ่งมั่นพัฒนาการศึกษาสู่อนาคต</p>
-            </div>
-        </section>
-
-        <hr style="margin: 30px 0;">
-
-        <section id="personnel">
-            <h2>ข้อมูลบุคลากร</h2>
-            <div class="card-grid">
-                <div class="card">
-                    <h4>กลุ่มสาระ / แผนกวิชา</h4>
-                    <p>ค้นหาตามรายชื่อและแผนกวิชา</p>
+        <!-- 1) หน้าหลัก (Home Page) -->
+        <div id="home" class="tab-content active">
+            <div class="banner-slide">
+                <div>
+                    <h2>ยินดีต้อนรับสู่ โปลิเทคนิคลานนา</h2>
+                    <p>มุ่งมั่นพัฒนาวิชาชีพ ก้าวทันเทคโนโลยี สู่มาตรฐานสากล</p>
                 </div>
             </div>
-        </section>
 
-        <hr style="margin: 30px 0;">
-
-        <section id="students">
-            <h2>ข้อมูลนักเรียน นักศึกษา</h2>
-            <div class="card-grid">
+            <h2 class="section-title">ข่าวประชาสัมพันธ์ & ประกาศ</h2>
+            <div class="grid-3">
                 <div class="card">
-                    <h4>สถิติภาพรวม</h4>
-                    <p>จำนวนนักเรียนทั้งหมดแยกตามระดับชั้นและสาขาวิชา</p>
+                    <div class="card-icon"><i class="fa-solid fa-bullhorn"></i></div>
+                    <h3>รับสมัครนักเรียน/นักศึกษาใหม่</h3>
+                    <p>เปิดรับสมัครระดับ ปวช. และ ปวส. ประจำปีการศึกษาใหม่ โควตาพิเศษและทุนการศึกษา</p>
+                    <a href="#" class="btn">อ่านเพิ่มเติม</a>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fa-solid fa-calendar-check"></i></div>
+                    <h3>ปฏิทินการศึกษา</h3>
+                    <p>กำหนดการสอบกลางภาค ประกาศผลเรียน และวันสำคัญต่างๆ ของสถานศึกษา</p>
+                    <a href="#" class="btn">ดูปฏิทิน</a>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fa-solid fa-award"></i></div>
+                    <h3>กิจกรรมล่าสุด</h3>
+                    <p>ประมวลภาพกิจกรรมการแข่งขันทักษะวิชาชีพและกิจกรรมส่งเสริมคุณธรรม</p>
+                    <a href="#" class="btn">ชมภาพกิจกรรม</a>
                 </div>
             </div>
-        </section>
+        </div>
 
-        <hr style="margin: 30px 0;">
-
-        <section id="programs">
-            <h2>สาขาวิชาที่เปิดสอน</h2>
-            <div class="card-grid">
-                <div class="card"><h4>เทคโนโลยีสารสนเทศ</h4></div>
-                <div class="card"><h4>ช่างยนต์ / ยานยนต์ไฟฟ้า (EV)</h4></div>
-                <div class="card"><h4>การบัญชี / การตลาด</h4></div>
-                <div class="card"><h4>การท่องเที่ยว / การโรงแรม</h4></div>
+        <!-- 2) ข้อมูลผู้บริหาร (Administrators) -->
+        <div id="executives" class="tab-content">
+            <h2 class="section-title">ทำเนียบผู้บริหารสถานศึกษา</h2>
+            <div class="card" style="text-align: center; max-width: 500px; margin: 0 auto 30px auto;">
+                <img src="https://via.placeholder.com/150" style="border-radius: 50%; margin-bottom: 15px;" alt="ผู้อำนวยการ">
+                <h3>ผู้อำนวยการ / ผู้จัดการสถานศึกษา</h3>
+                <p style="color: var(--accent-green); font-weight: 600;">วิทยาลัยเทคโนโลยีโปลิเทคนิคลานนา</p>
+                <p style="margin-top: 10px; font-style: italic; color: var(--text-muted);">"มุ่งมั่นสร้างนวัตกรรมทางการศึกษา พัฒนาเยาวชนสู่มืออาชีพในอนาคต"</p>
             </div>
-        </section>
+
+            <h3 style="margin-bottom: 15px; color: var(--primary-blue);">คณะผู้บริหารและรองผู้อำนวยการ</h3>
+            <div class="grid-3">
+                <div class="card" style="text-align: center;">
+                    <h4>รองผู้อำนวยการฝ่ายวิชาการ</h4>
+                    <p style="color: var(--text-muted);">ดูแลและบริหารจัดการด้านการเรียนการสอน</p>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <h4>รองผู้อำนวยการฝ่ายกิจการนักเรียน</h4>
+                    <p style="color: var(--text-muted);">กำกับดูแลวินัย กิจกรรม และการพัฒนานักศึกษา</p>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <h4>รองผู้อำนวยการฝ่ายบริหารงานทั่วไป</h4>
+                    <p style="color: var(--text-muted);">ดูแลระบบสารสนเทศ อาคารสถานที่ และบริการทั่วไป</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3) ข้อมูลบุคลากร (Personnel) -->
+        <div id="personnel" class="tab-content">
+            <h2 class="section-title">บุคลากรครูและเจ้าหน้าที่</h2>
+            <div class="card" style="margin-bottom: 20px;">
+                <input type="text" placeholder="🔍 ค้นหาตามชื่อ หรือ แผนกวิชา..." style="width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 5px;">
+            </div>
+
+            <div class="grid-4">
+                <div class="card" style="text-align: center;">
+                    <i class="fa-solid fa-laptop-code card-icon"></i>
+                    <h4>แผนกเทคโนโลยีสารสนเทศ</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);">ครูประจำแผนก 12 ท่าน</p>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <i class="fa-solid fa-wrench card-icon"></i>
+                    <h4>แผนกช่างยนต์ / EV</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);">ครูประจำแผนก 15 ท่าน</p>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <i class="fa-solid fa-calculator card-icon"></i>
+                    <h4>แผนกการบัญชีและการตลาด</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);">ครูประจำแผนก 10 ท่าน</p>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <i class="fa-solid fa-concierge-bell card-icon"></i>
+                    <h4>แผนกการท่องเที่ยว-โรงแรม</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);">ครูประจำแผนก 8 ท่าน</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4) ข้อมูลนักเรียน นักศึกษา (Students) -->
+        <div id="students" class="tab-content">
+            <h2 class="section-title">สถิติและข้อมูลนักเรียน / นักศึกษา</h2>
+            <div class="grid-4" style="margin-bottom: 30px;">
+                <div class="stat-card">
+                    <div class="stat-number">2,500+</div>
+                    <p>นักศึกษาทั้งหมด</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">1,400</div>
+                    <p>ระดับชั้น ปวช.</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">1,100</div>
+                    <p>ระดับชั้น ปวส.</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">12</div>
+                    <p>สาขาวิชาที่เปิดสอน</p>
+                </div>
+            </div>
+
+            <h3 style="color: var(--primary-blue);">ตารางสรุปจำนวนนักศึกษาจำแนกตามระดับชั้น</h3>
+            <table class="custom-table">
+                <thead>
+                    <tr>
+                        <th>ระดับชั้น</th>
+                        <th>จำนวนห้อง</th>
+                        <th>ชาย (คน)</th>
+                        <th>หญิง (คน)</th>
+                        <th>รวม (คน)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>ประกาศนียบัตรวิชาชีพ (ปวช.)</td>
+                        <td>35</td>
+                        <td>850</td>
+                        <td>550</td>
+                        <td>1,400</td>
+                    </tr>
+                    <tr>
+                        <td>ประกาศนียบัตรวิชาชีพชั้นสูง (ปวส.)</td>
+                        <td>25</td>
+                        <td>650</td>
+                        <td>450</td>
+                        <td>1,100</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 5) สาขาวิชาที่เปิดสอน (Programs Offered) -->
+        <div id="programs" class="tab-content">
+            <h2 class="section-title">หลักสูตรและสาขาวิชาที่เปิดสอน</h2>
+            <div class="grid-3">
+                <div class="card">
+                    <div class="card-icon"><i class="fa-solid fa-code"></i></div>
+                    <h3>เทคโนโลยีสารสนเทศ & ธุรกิจดิจิทัล</h3>
+                    <p>เน้นการเขียนโปรแกรม พัฒนาเว็บไซต์ เครือข่ายคอมพิวเตอร์ และเทคโนโลยีดิจิทัลสมัยใหม่</p>
+                    <a href="#" class="btn">รายละเอียดหลักสูตร</a>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fa-solid fa-car-battery"></i></div>
+                    <h3>ช่างยนต์ & ยานยนต์ไฟฟ้า (EV)</h3>
+                    <p>เรียนรู้ระบบเครื่องยนต์ การซ่อมบำรุง และเทคโนโลยียานยนต์ไฟฟ้าที่กำลังมาแรง</p>
+                    <a href="#" class="btn">รายละเอียดหลักสูตร</a>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fa-solid fa-bolt"></i></div>
+                    <h3>ไฟฟ้ากำลัง & อิเล็กทรอนิกส์</h3>
+                    <p>ฝึกปฏิบัติงานติดตั้งระบบไฟฟ้าอุตสาหกรรม และการควบคุมระบบอิเล็กทรอนิกส์</p>
+                    <a href="#" class="btn">รายละเอียดหลักสูตร</a>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fa-solid fa-chart-line"></i></div>
+                    <h3>การบัญชี & การตลาด</h3>
+                    <p>สร้างความรู้ด้านการเงิน การวางแผนธุรกิจ และการตลาดออนไลน์สำหรับยุคใหม่</p>
+                    <a href="#" class="btn">รายละเอียดหลักสูตร</a>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fa-solid fa-hotel"></i></div>
+                    <h3>การท่องเที่ยว & การโรงแรม</h3>
+                    <p>เน้นทักษะภาษานานาชาติ งานบริการ งานโรงแรม และการจัดการธุรกิจท่องเที่ยว</p>
+                    <a href="#" class="btn">รายละเอียดหลักสูตร</a>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fa-solid fa-compass-drafting"></i></div>
+                    <h3>ก่อสร้าง & สถาปัตยกรรม</h3>
+                    <p>การเขียนแบบสถาปัตยกรรม คำนวณโครงสร้าง และการบริหารจัดการงานก่อสร้าง</p>
+                    <a href="#" class="btn">รายละเอียดหลักสูตร</a>
+                </div>
+            </div>
+        </div>
 
     </div>
 
+    <!-- ส่วนท้าย (Footer) -->
     <footer>
-        <p>2 ถนนสุขเกษม ต.ป่าตัน อ.เมือง จ.เชียงใหม่ 50300 | www.lannapoly.ac.th</p>
-        <p>สงวนลิขสิทธิ์ © วิทยาลัยเทคโนโลยีโปลิเทคนิคลานนา เชียงใหม่</p>
-        <p><small>จัดทำโดย นายอภิรักษ์ มุกดา (IT3102 เลขที่ 18)</small></p>
+        <div class="footer-content">
+            <div>
+                <h3 style="margin-bottom: 10px;">วิทยาลัยเทคโนโลยีโปลิเทคนิคลานนา</h3>
+                <p><i class="fa-solid fa-location-dot"></i> 2 ถนนสุขเกษม ต.ป่าตัน อ.เมือง จ.เชียงใหม่ 50300</p>
+                <p><i class="fa-solid fa-globe"></i> www.lannapoly.ac.th</p>
+            </div>
+            <div>
+                <h3 style="margin-bottom: 10px;">ข้อมูลผู้จัดทำเว็บ</h3>
+                <p>จัดทำโดย: นายอภิรักษ์ มุกดา</p>
+                <p>ระดับชั้น: IT3102 เลขที่ 18</p>
+                <p>เสนอ: อาจารย์บุษราภรณ์ ทัพธานี</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>สงวนลิขสิทธิ์ © วิทยาลัยเทคโนโลยีโปลิเทคนิคลานนา เชียงใหม่</p>
+        </div>
     </footer>
 
+    <!-- JavaScript สำหรับสลับ Tab หน้าจอ -->
+    <script>
+        function switchTab(tabId, element) {
+            const tabContents = document.querySelectorAll('.tab-content');
+            tabContents.forEach(tab => tab.classList.remove('active'));
+
+            const navItems = document.querySelectorAll('.nav-item');
+            navItems.forEach(item => item.classList.remove('active'));
+
+            document.getElementById(tabId).classList.add('active');
+            element.classList.add('active');
+        }
+    </script>
 </body>
 </html>
