@@ -72,27 +72,48 @@
         <!-- 2) ข้อมูลผู้บริหาร (Administrators) -->
         <div id="executives" class="tab-content">
             <h2 class="section-title">ทำเนียบผู้บริหารสถานศึกษา</h2>
-            <div class="card" style="text-align: center; max-width: 500px; margin: 0 auto 30px auto;">
-                <img src="https://via.placeholder.com/150" style="border-radius: 50%; margin-bottom: 15px;" alt="ผู้อำนวยการ">
-                <h3>ผู้อำนวยการ / ผู้จัดการสถานศึกษา</h3>
-                <p style="color: var(--accent-green); font-weight: 600;">วิทยาลัยเทคโนโลยีโปลิเทคนิคลานนา เชียงใหม่</p>
-                <p style="margin-top: 10px; font-style: italic; color: var(--text-muted);">"มุ่งมั่นสร้างนวัตกรรมทางการศึกษา พัฒนาเยาวชนสู่มืออาชีพในอนาคต"</p>
+
+            <!-- ผู้รับใบอนุญาตและผู้จัดการ / ผู้อำนวยการ -->
+            <div style="max-width: 800px; margin: 0 auto 30px auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+                
+                <div class="card" style="text-align: center;">
+                    <div class="avatar-circle" style="width: 140px; height: 140px; margin: 0 auto 15px auto;">
+                        <img src="./ex1.jpg" alt="นายสมมิทธิ์ ทิพยมณฑล" class="person-img" onerror="this.src='https://via.placeholder.com/140?text=Executive'">
+                    </div>
+                    <h3 style="color: var(--primary-blue); font-size: 1.2rem;">นายสมมิทธิ์ ทิพยมณฑล</h3>
+                    <p style="color: var(--accent-green); font-weight: 600; margin-top: 5px;">ผู้รับใบอนุญาตและผู้จัดการ</p>
+                </div>
+
+                <div class="card" style="text-align: center;">
+                    <div class="avatar-circle" style="width: 140px; height: 140px; margin: 0 auto 15px auto;">
+                        <img src="./ex2.jpg" alt="นายฉลวย พันธ์ทอง" class="person-img" onerror="this.src='https://via.placeholder.com/140?text=Executive'">
+                    </div>
+                    <h3 style="color: var(--primary-blue); font-size: 1.2rem;">นายฉลวย พันธ์ทอง</h3>
+                    <p style="color: var(--accent-green); font-weight: 600; margin-top: 5px;">ผู้อำนวยการ</p>
+                </div>
+
             </div>
 
-            <h3 style="margin-bottom: 15px; color: var(--primary-blue);">คณะผู้บริหารและรองผู้อำนวยการ</h3>
-            <div class="grid-3">
+            <h3 style="margin-bottom: 20px; color: var(--primary-blue); text-align: center;">คณะรองผู้อำนวยการ</h3>
+            
+            <div style="max-width: 800px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+                
                 <div class="card" style="text-align: center;">
-                    <h4>รองผู้อำนวยการฝ่ายวิชาการ</h4>
-                    <p style="color: var(--text-muted);">ดูแลและบริหารจัดการด้านการเรียนการสอน</p>
+                    <div class="avatar-circle" style="width: 130px; height: 130px; margin: 0 auto 15px auto;">
+                        <img src="./ex3.jpg" alt="นายศิรภพ เจริญกุศล" class="person-img" onerror="this.src='https://via.placeholder.com/130?text=Deputy'">
+                    </div>
+                    <h4 style="font-size: 1.1rem;">นายศิรภพ เจริญกุศล</h4>
+                    <p style="color: var(--text-muted); margin-top: 5px;">รองผู้อำนวยการฝ่ายส่งเสริมการศึกษา</p>
                 </div>
+
                 <div class="card" style="text-align: center;">
-                    <h4>รองผู้อำนวยการฝ่ายกิจการนักเรียน</h4>
-                    <p style="color: var(--text-muted);">กำกับดูแลวินัย กิจกรรม และการพัฒนานักศึกษา</p>
+                    <div class="avatar-circle" style="width: 130px; height: 130px; margin: 0 auto 15px auto;">
+                        <img src="./ex4.jpg" alt="นายประสิทธิ์ ชูดวง" class="person-img" onerror="this.src='https://via.placeholder.com/130?text=Deputy'">
+                    </div>
+                    <h4 style="font-size: 1.1rem;">นายประสิทธิ์ ชูดวง</h4>
+                    <p style="color: var(--text-muted); margin-top: 5px;">รองผู้อำนวยการฝ่ายกิจการนักศึกษา</p>
                 </div>
-                <div class="card" style="text-align: center;">
-                    <h4>รองผู้อำนวยการฝ่ายบริหารงานทั่วไป</h4>
-                    <p style="color: var(--text-muted);">ดูแลระบบสารสนเทศ อาคารสถานที่ และบริการทั่วไป</p>
-                </div>
+
             </div>
         </div>
 
@@ -129,7 +150,7 @@
                 </div>
             </div>
 
-            <!-- รายการบุคลากรแบบการ์ด (ใช้รูปภาพอาจารย์ 3 ท่านจากไฟล์ใน GitHub) -->
+            <!-- รายการบุคลากรแบบการ์ด (คงไว้เฉพาะอาจารย์ 3 ท่าน) -->
             <div class="grid-4" id="personnelGrid">
                 
                 <!-- ท่านที่ 1 -->
