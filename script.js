@@ -1,35 +1,36 @@
-// สลับแท็บ Executive และ Personnel
-function switchTab(tabName) {
-    const tabs = document.querySelectorAll('.tab-content');
-    const buttons = document.querySelectorAll('.tab-btn');
+// ฟังก์ชันสำหรับสลับแท็บหน้าจอหลัก (Site Navigation Tabs)
+function switchTab(tabId, element) {
+    // ซ่อน Content ของทุกแท็บ
+    const tabContents = document.querySelectorAll('.tab-content');
+    tabContents.forEach(tab => tab.classList.remove('active'));
 
-    tabs.forEach(tab => tab.classList.remove('active'));
-    buttons.forEach(btn => btn.classList.remove('active'));
+    // ลบการแสดงผล Active จากเมนูเดิม
+    const navItems = document.querySelectorAll('.nav-item');
+    navItems.forEach(item => item.classList.remove('active'));
 
-    if (tabName === 'executives') {
-        document.getElementById('executivesTab').classList.add('active');
-        buttons[0].classList.add('active');
-    } else if (tabName === 'personnel') {
-        document.getElementById('personnelTab').classList.add('active');
-        buttons[1].classList.add('active');
-    }
+    // แสดง Content แท็บที่เลือก และเปลี่ยนสถานะเมนูให้เป็น Active
+    document.getElementById(tabId).classList.add('active');
+    element.classList.add('active');
 }
 
-// กรองข้อมูลบุคลากรตามสาขาวิชา
-function filterDept(dept) {
-    const cards = document.querySelectorAll('#personnelGrid .card');
-    const filterBtns = document.querySelectorAll('.filter-btn');
+// ฟังก์ชันค้นหาและกรองการ์ดรายชื่อบุคลากร (Personnel Filtering System)
+function filterPersonnel() {
+    const searchValue = document.getElementById('searchInput').value.toLowerCase();
+    const selectedDept = document.getElementById('departmentFilter').value;
+    const cards = document.querySelectorAll('.person-card');
 
-    // สลับคลาส active ของปุ่มตัวกรอง
-    filterBtns.forEach(btn => btn.classList.remove('active'));
-    event.target.classList.add('active');
-
-    // แสดง/ซ่อนการ์ดบุคลากร
     cards.forEach(card => {
-        if (dept === 'all' || card.getAttribute('data-dept') === dept) {
-            card.style.display = 'block';
+        const name = card.querySelector('.person-name').textContent.toLowerCase();
+        const role = card.querySelector('.person-role').textContent.toLowerCase();
+        const dept = card.getAttribute('data-dept');
+
+        const matchesSearch = name.includes(searchValue) || role.includes(searchValue);
+        const matchesDept = (selectedDept === 'all') || (dept === selectedDept);
+
+        if (matchesSearch && matchesDept) {
+            card.style.display = "flex";
         } else {
-            card.style.display = 'none';
+            card.style.display = "none";
         }
     });
 }
