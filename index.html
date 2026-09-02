@@ -3,300 +3,141 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>วิทยาลัยเทคโนโลยีโปลิเทคนิคลานนา เชียงใหม่</title>
+    <title>บุคลากร - วิทยาลัยเทคโนโลยีโปลิเทคนิคลานนา เชียงใหม่</title>
+    
     <!-- Google Fonts & Font Awesome Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- เชื่อมโยงไฟล์ CSS -->
+    
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- ส่วนหัว (Header) -->
-    <header>
-        <div class="logo-container">
-            <img src="logo.jpg" alt="โลโก้สถานศึกษา" onerror="this.src='https://via.placeholder.com/65?text=POLY'">
-            <div>
-                <h1>วิทยาลัยเทคโนโลยีโปลิเทคนิคลานนา เชียงใหม่</h1>
-                <p>Lanna Polytechnic Chiangmai Technological College</p>
+    <!-- Header / Navbar -->
+    <header class="header">
+        <div class="container header-content">
+            <div class="logo-area">
+                <i class="fa-solid fa-graduation-cap logo-icon"></i>
+                <div class="logo-text">
+                    <span class="title">LANNA POLYTECHNIC</span>
+                    <span class="subtitle">วิทยาลัยเทคโนโลยีโปลิเทคนิคลานนา เชียงใหม่</span>
+                </div>
             </div>
+            <nav class="nav">
+                <a href="#"><i class="fa-solid fa-house"></i> หน้าแรก</a>
+                <a href="#" class="active"><i class="fa-solid fa-users"></i> บุคลากร</a>
+                <a href="#"><i class="fa-solid fa-address-book"></i> ติดต่อเรา</a>
+            </nav>
         </div>
     </header>
 
-    <!-- เมนูนำทาง (Navigation Bar) -->
-    <nav>
-        <ul class="nav-menu">
-            <li class="nav-item active" onclick="switchTab('home', this)"><i class="fa-solid fa-house"></i> หน้าหลัก</li>
-            <li class="nav-item" onclick="switchTab('executives', this)"><i class="fa-solid fa-user-tie"></i> ข้อมูลผู้บริหาร</li>
-            <li class="nav-item" onclick="switchTab('personnel', this)"><i class="fa-solid fa-users"></i> ข้อมูลบุคลากร</li>
-            <li class="nav-item" onclick="switchTab('students', this)"><i class="fa-solid fa-user-graduate"></i> ข้อมูลนักเรียน/นักศึกษา</li>
-            <li class="nav-item" onclick="switchTab('programs', this)"><i class="fa-solid fa-book-open"></i> สาขาวิชาที่เปิดสอน</li>
-        </ul>
-    </nav>
+    <!-- Banner Section -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container hero-text">
+            <h1>คณะผู้บริหารและบุคลากร</h1>
+            <p>วิทยาลัยเทคโนโลยีโปลิเทคนิคลานนา เชียงใหม่</p>
+        </div>
+    </section>
 
-    <!-- ส่วนเนื้อหาหลัก (Content Area) -->
-    <div class="container">
-
-        <!-- 1) หน้าหลัก (Home Page) -->
-        <div id="home" class="tab-content active">
-            <div class="banner-slide">
-                <div>
-                    <h2>ยินดีต้อนรับสู่ โปลิเทคนิคลานนา</h2>
-                    <p>มุ่งมั่นพัฒนาวิชาชีพ ก้าวทันเทคโนโลยี สู่มาตรฐานสากล</p>
-                </div>
-            </div>
-
-            <h2 class="section-title">ข่าวประชาสัมพันธ์ & ประกาศ</h2>
-            <div class="grid-3">
-                <div class="card">
-                    <div class="card-icon"><i class="fa-solid fa-bullhorn"></i></div>
-                    <h3>รับสมัครนักเรียน/นักศึกษาใหม่</h3>
-                    <p>เปิดรับสมัครระดับ ปวช. และ ปวส. ประจำปีการศึกษาใหม่ โควตาพิเศษและทุนการศึกษา</p>
-                    <a href="#" class="btn">อ่านเพิ่มเติม</a>
-                </div>
-                <div class="card">
-                    <div class="card-icon"><i class="fa-solid fa-calendar-check"></i></div>
-                    <h3>ปฏิทินการศึกษา</h3>
-                    <p>กำหนดการสอบกลางภาค ประกาศผลเรียน และวันสำคัญต่างๆ ของสถานศึกษา</p>
-                    <a href="#" class="btn">ดูปฏิทิน</a>
-                </div>
-                <div class="card">
-                    <div class="card-icon"><i class="fa-solid fa-award"></i></div>
-                    <h3>กิจกรรมล่าสุด</h3>
-                    <p>ประมวลภาพกิจกรรมการแข่งขันทักษะวิชาชีพและกิจกรรมส่งเสริมคุณธรรม</p>
-                    <a href="#" class="btn">ชมภาพกิจกรรม</a>
-                </div>
-            </div>
+    <!-- Main Container -->
+    <main class="container main-content">
+        
+        <!-- Tab Navigation -->
+        <div class="tabs">
+            <button class="tab-btn active" onclick="switchTab('executives')">
+                <i class="fa-solid fa-user-tie"></i> คณะผู้บริหาร
+            </button>
+            <button class="tab-btn" onclick="switchTab('personnel')">
+                <i class="fa-solid fa-users-gear"></i> บุคลากรสาขาวิชา
+            </button>
         </div>
 
-        <!-- 2) ข้อมูลผู้บริหาร (Executives) - เลือกเฉพาะตำแหน่งสำคัญ -->
-        <div id="executives" class="tab-content">
-            <h2 class="section-title">ทำเนียบผู้บริหารสถานศึกษา</h2>
+        <!-- Section 1: คณะผู้บริหาร -->
+        <section id="executivesTab" class="tab-content active">
+            <div class="grid-4">
+                <div class="card exec-card">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=300&q=80" alt="ผู้อำนวยการ" class="person-img">
+                    <div class="person-name">อ.สมชาย จิตตรง</div>
+                    <div class="person-role">ผู้อำนวยการ</div>
+                    <div class="person-dept"><i class="fa-solid fa-building"></i> ฝ่ายบริหาร</div>
+                </div>
+                <div class="card exec-card">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=300&q=80" alt="รองผู้อำนวยการ" class="person-img">
+                    <div class="person-name">อ.นภา วงศ์สว่าง</div>
+                    <div class="person-role">รองผู้อำนวยการฝ่ายวิชาการ</div>
+                    <div class="person-dept"><i class="fa-solid fa-building"></i> ฝ่ายวิชาการ</div>
+                </div>
+                <div class="card exec-card">
+                    <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=300&q=80" alt="รองผู้อำนวยการ" class="person-img">
+                    <div class="person-name">อ.วิชัย ศรีสุข</div>
+                    <div class="person-role">รองผู้อำนวยการฝ่ายกิจการนักศึกษา</div>
+                    <div class="person-dept"><i class="fa-solid fa-building"></i> ฝ่ายกิจการนักศึกษา</div>
+                </div>
+                <div class="card exec-card">
+                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=300&q=80" alt="ผู้ช่วยผู้อำนวยการ" class="person-img">
+                    <div class="person-name">อ.กานดา สุขใจ</div>
+                    <div class="person-role">ผู้ช่วยผู้อำนวยการฝ่ายแผนงาน</div>
+                    <div class="person-dept"><i class="fa-solid fa-building"></i> ฝ่ายแผนงานและประกันคุณภาพ</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: บุคลากรสาขาวิชา -->
+        <section id="personnelTab" class="tab-content">
             
-            <!-- ผู้รับใบอนุญาต / ผู้จัดการ -->
-            <div class="card main-exec-card">
-                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=300&auto=format&fit=crop" alt="อาจารย์สมมิทธิ์ ทิพยมณฑล" class="exec-img-lg">
-                <h3>อาจารย์สมมิทธิ์ ทิพยมณฑล</h3>
-                <p class="exec-title">ผู้รับใบอนุญาตและผู้จัดการ</p>
-                <p class="exec-quote">"มุ่งมั่นสร้างนวัตกรรมทางการศึกษา พัฒนาเยาวชนสู่มืออาชีพในอนาคต"</p>
+            <!-- Category Filter Buttons -->
+            <div class="filter-bar">
+                <button class="filter-btn active" onclick="filterDept('all')">ทั้งหมด</button>
+                <button class="filter-btn" onclick="filterDept('it')">สาขาเทคโนโลยีสารสนเทศ</button>
             </div>
 
-            <h3 style="margin: 30px 0 15px 0; color: var(--primary-blue);">คณะผู้บริหารและรองผู้อำนวยการ</h3>
-            <div class="grid-3">
-                <div class="card exec-card">
-                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&auto=format&fit=crop" alt="รองผู้อำนวยการฝ่ายวิชาการ" class="exec-img">
-                    <h4>อาจารย์ศิรินทิพย์ ทิพยมณฑล</h4>
-                    <p class="exec-role">รองผู้อำนวยการฝ่ายวิชาการ</p>
-                    <p class="exec-desc">กำกับดูแลและพัฒนาหลักสูตรการเรียนการสอน</p>
-                </div>
-                <div class="card exec-card">
-                    <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=200&auto=format&fit=crop" alt="อาจารย์ประสิทธิ์ ชูดวง" class="exec-img">
-                    <h4>อาจารย์ประสิทธิ์ ชูดวง</h4>
-                    <p class="exec-role">รองผู้อำนวยการฝ่ายกิจการนักเรียน</p>
-                    <p class="exec-desc">กำกับดูแลวินัย กิจกรรม และการพัฒนานักศึกษา</p>
-                </div>
-                <div class="card exec-card">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&auto=format&fit=crop" alt="รองผู้อำนวยการฝ่ายบริหารงานทั่วไป" class="exec-img">
-                    <h4>อาจารย์ครรชิต เมฆสกุล</h4>
-                    <p class="exec-role">รองผู้อำนวยการฝ่ายบริหารงานทั่วไป</p>
-                    <p class="exec-desc">ดูแลระบบสารสนเทศ อาคารสถานที่ และบริการทั่วไป</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- 3) ข้อมูลบุคลากร (Personnel) - คัดมาเฉพาะหัวหน้าและครูประจำสาขาพอสังเขป -->
-        <div id="personnel" class="tab-content">
-            <h2 class="section-title">ทำเนียบบุคลากรครูและเจ้าหน้าที่</h2>
-
-            <!-- แถบค้นหาและตัวกรอง -->
-            <div class="filter-box">
-                <input type="text" id="searchInput" onkeyup="filterPersonnel()" placeholder="🔍 ค้นหาตามชื่อ-นามสกุล หรือ ตำแหน่ง...">
-                <select id="departmentFilter" onchange="filterPersonnel()">
-                    <option value="all">แสดงทุกแผนกวิชา</option>
-                    <option value="it">สาขาวิชาเทคโนโลยีสารสนเทศ</option>
-                    <option value="auto">สาขาวิชาช่างยนต์ / ยานยนต์ไฟฟ้า (EV)</option>
-                    <option value="power">สาขาวิชาช่างไฟฟ้ากำลัง</option>
-                    <option value="acc">สาขาวิชาการบัญชี / การตลาด</option>
-                </select>
-            </div>
-
-            <!-- รายการบุคลากรแบบการ์ด (คัดเลือกมาพอประมาณ) -->
+            <!-- Personnel Grid (ข้อมูลแผนก IT จริง) -->
             <div class="grid-4" id="personnelGrid">
                 
-                <!-- แผนก IT -->
+                <!-- 1. หัวหน้าสาขา -->
                 <div class="card person-card" data-dept="it">
-                    <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=200&auto=format&fit=crop" alt="อาจารย์บุษราภรณ์ ทัพธานี" class="person-img">
-                    <div class="person-name">อาจารย์บุษราภรณ์ ทัพธานี</div>
-                    <div class="person-role">อาจารย์ประจำสาขาวิชา</div>
+                    <img src="https://www.lannapoly.ac.th/web/personal/pic/IT-01.jpg" alt="นางสาวมยุรีย์ พงษ์บุพศิริกุล" class="person-img" onerror="this.src='https://via.placeholder.com/150?text=Mayulee'">
+                    <div class="person-name">นางสาวมยุรีย์ พงษ์บุพศิริกุล</div>
+                    <div class="person-role">หัวหน้าสาขาวิชาเทคโนโลยีสารสนเทศ</div>
                     <div class="person-dept"><i class="fa-solid fa-laptop-code"></i> เทคโนโลยีสารสนเทศ</div>
-                    <div class="person-contact"><i class="fa-solid fa-envelope"></i> bussaraporn@lannapoly.ac.th</div>
+                    <div class="person-contact">MissMayulee Chailangka</div>
                 </div>
 
+                <!-- 2. ครูเทคโนโลยีสารสนเทศ -->
                 <div class="card person-card" data-dept="it">
-                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&auto=format&fit=crop" alt="อาจารย์สมชาย พัฒนระบบ" class="person-img">
-                    <div class="person-name">อาจารย์สมชาย พัฒนระบบ</div>
-                    <div class="person-role">หัวหน้าสาขาวิชา</div>
+                    <img src="https://www.lannapoly.ac.th/web/personal/pic/IT-02.jpg" alt="นายเทวฤทธิ์ วงค์ฉายา" class="person-img" onerror="this.src='https://via.placeholder.com/150?text=Tewarit'">
+                    <div class="person-name">นายเทวฤทธิ์ วงค์ฉายา</div>
+                    <div class="person-role">ครูเทคโนโลยีสารสนเทศ</div>
                     <div class="person-dept"><i class="fa-solid fa-laptop-code"></i> เทคโนโลยีสารสนเทศ</div>
-                    <div class="person-contact"><i class="fa-solid fa-envelope"></i> somchai@lannapoly.ac.th</div>
+                    <div class="person-contact">Mr.Tewarit Wongchaya</div>
                 </div>
 
-                <!-- แผนกช่างยนต์ / EV -->
-                <div class="card person-card" data-dept="auto">
-                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&auto=format&fit=crop" alt="อาจารย์วิชาญ ยานยนต์" class="person-img">
-                    <div class="person-name">อาจารย์วิชาญ ยานยนต์</div>
-                    <div class="person-role">หัวหน้าสาขาวิชา</div>
-                    <div class="person-dept"><i class="fa-solid fa-car-battery"></i> ช่างยนต์ / EV</div>
-                    <div class="person-contact"><i class="fa-solid fa-envelope"></i> wichan@lannapoly.ac.th</div>
-                </div>
-
-                <!-- แผนกช่างไฟฟ้ากำลัง -->
-                <div class="card person-card" data-dept="power">
-                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&auto=format&fit=crop" alt="อาจารย์อนันต์ ไฟฟ้า" class="person-img">
-                    <div class="person-name">อาจารย์อนันต์ ไฟฟ้า</div>
-                    <div class="person-role">หัวหน้าสาขาวิชา</div>
-                    <div class="person-dept"><i class="fa-solid fa-bolt"></i> ไฟฟ้ากำลัง</div>
-                    <div class="person-contact"><i class="fa-solid fa-envelope"></i> anan@lannapoly.ac.th</div>
-                </div>
-
-                <!-- แผนกการบัญชี / การตลาด -->
-                <div class="card person-card" data-dept="acc">
-                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&auto=format&fit=crop" alt="อาจารย์นภา บริหารธุรกิจ" class="person-img">
-                    <div class="person-name">อาจารย์นภา บริหารธุรกิจ</div>
-                    <div class="person-role">หัวหน้าสาขาวิชา</div>
-                    <div class="person-dept"><i class="fa-solid fa-calculator"></i> การบัญชี & การตลาด</div>
-                    <div class="person-contact"><i class="fa-solid fa-envelope"></i> napa@lannapoly.ac.th</div>
-                </div>
-
-                <!-- เจ้าหน้าที่ธุรการ/ทะเบียน -->
-                <div class="card person-card" data-dept="staff">
-                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&auto=format&fit=crop" alt="คุณพัชรี บริการดี" class="person-img">
-                    <div class="person-name">คุณพัชรี บริการดี</div>
-                    <div class="person-role">เจ้าหน้าที่งานทะเบียน</div>
-                    <div class="person-dept"><i class="fa-solid fa-address-card"></i> งานบริหารธุรการ</div>
-                    <div class="person-contact"><i class="fa-solid fa-envelope"></i> patcharee@lannapoly.ac.th</div>
+                <!-- 3. ครูเทคโนโลยีสารสนเทศ -->
+                <div class="card person-card" data-dept="it">
+                    <img src="https://www.lannapoly.ac.th/web/personal/pic/IT-03.jpg" alt="นายไพศาล ณ ลำปาง" class="person-img" onerror="this.src='https://via.placeholder.com/150?text=Paisan'">
+                    <div class="person-name">นายไพศาล ณ ลำปาง</div>
+                    <div class="person-role">ครูเทคโนโลยีสารสนเทศ</div>
+                    <div class="person-dept"><i class="fa-solid fa-laptop-code"></i> เทคโนโลยีสารสนเทศ</div>
+                    <div class="person-contact">Mr.Paisan N.Lampang</div>
                 </div>
 
             </div>
-        </div>
+        </section>
 
-        <!-- 4) ข้อมูลนักเรียน นักศึกษา (Students) -->
-        <div id="students" class="tab-content">
-            <h2 class="section-title">สถิติและข้อมูลนักเรียน / นักศึกษา</h2>
-            <div class="grid-4" style="margin-bottom: 30px;">
-                <div class="stat-card">
-                    <div class="stat-number">2,500+</div>
-                    <p>นักศึกษาทั้งหมด</p>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">1,400</div>
-                    <p>ระดับชั้น ปวช.</p>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">1,100</div>
-                    <p>ระดับชั้น ปวส.</p>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">12</div>
-                    <p>สาขาวิชาที่เปิดสอน</p>
-                </div>
-            </div>
+    </main>
 
-            <h3 style="color: var(--primary-blue);">ตารางสรุปจำนวนนักศึกษาจำแนกตามระดับชั้น</h3>
-            <table class="custom-table">
-                <thead>
-                    <tr>
-                        <th>ระดับชั้น</th>
-                        <th>จำนวนห้อง</th>
-                        <th>ชาย (คน)</th>
-                        <th>หญิง (คน)</th>
-                        <th>รวม (คน)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>ประกาศนียบัตรวิชาชีพ (ปวช.)</td>
-                        <td>35</td>
-                        <td>850</td>
-                        <td>550</td>
-                        <td>1,400</td>
-                    </tr>
-                    <tr>
-                        <td>ประกาศนียบัตรวิชาชีพชั้นสูง (ปวส.)</td>
-                        <td>25</td>
-                        <td>650</td>
-                        <td>450</td>
-                        <td>1,100</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <!-- 5) สาขาวิชาที่เปิดสอน (Programs Offered) -->
-        <div id="programs" class="tab-content">
-            <h2 class="section-title">หลักสูตรและสาขาวิชาที่เปิดสอน</h2>
-            <div class="grid-3">
-                <div class="card">
-                    <div class="card-icon"><i class="fa-solid fa-code"></i></div>
-                    <h3>เทคโนโลยีสารสนเทศ & ธุรกิจดิจิทัล</h3>
-                    <p>เน้นการเขียนโปรแกรม พัฒนาเว็บไซต์ เครือข่ายคอมพิวเตอร์ และเทคโนโลยีดิจิทัลสมัยใหม่</p>
-                    <a href="#" class="btn">รายละเอียดหลักสูตร</a>
-                </div>
-                <div class="card">
-                    <div class="card-icon"><i class="fa-solid fa-car-battery"></i></div>
-                    <h3>ช่างยนต์ & ยานยนต์ไฟฟ้า (EV)</h3>
-                    <p>เรียนรู้ระบบเครื่องยนต์ การซ่อมบำรุง และเทคโนโลยียานยนต์ไฟฟ้าที่กำลังมาแรง</p>
-                    <a href="#" class="btn">รายละเอียดหลักสูตร</a>
-                </div>
-                <div class="card">
-                    <div class="card-icon"><i class="fa-solid fa-bolt"></i></div>
-                    <h3>ไฟฟ้ากำลัง & อิเล็กทรอนิกส์</h3>
-                    <p>ฝึกปฏิบัติงานติดตั้งระบบไฟฟ้าอุตสาหกรรม และการควบคุมระบบอิเล็กทรอนิกส์</p>
-                    <a href="#" class="btn">รายละเอียดหลักสูตร</a>
-                </div>
-                <div class="card">
-                    <div class="card-icon"><i class="fa-solid fa-chart-line"></i></div>
-                    <h3>การบัญชี & การตลาด</h3>
-                    <p>สร้างความรู้ด้านการเงิน การวางแผนธุรกิจ และการตลาดออนไลน์สำหรับยุคใหม่</p>
-                    <a href="#" class="btn">รายละเอียดหลักสูตร</a>
-                </div>
-                <div class="card">
-                    <div class="card-icon"><i class="fa-solid fa-hotel"></i></div>
-                    <h3>การท่องเที่ยว & การโรงแรม</h3>
-                    <p>เน้นทักษะภาษานานาชาติ งานบริการ งานโรงแรม และการจัดการธุรกิจท่องเที่ยว</p>
-                    <a href="#" class="btn">รายละเอียดหลักสูตร</a>
-                </div>
-                <div class="card">
-                    <div class="card-icon"><i class="fa-solid fa-compass-drafting"></i></div>
-                    <h3>ก่อสร้าง & สถาปัตยกรรม</h3>
-                    <p>การเขียนแบบสถาปัตยกรรม คำนวณโครงสร้าง และการบริหารจัดการงานก่อสร้าง</p>
-                    <a href="#" class="btn">รายละเอียดหลักสูตร</a>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-    <!-- ส่วนท้าย (Footer) -->
-    <footer>
-        <div class="footer-content">
-            <div>
-                <h3 style="margin-bottom: 10px;">วิทยาลัยเทคโนโลยีโปลิเทคนิคลานนา</h3>
-                <p><i class="fa-solid fa-location-dot"></i> 2 ถนนสุขเกษม ต.ป่าตัน อ.เมือง จ.เชียงใหม่ 50300</p>
-                <p><i class="fa-solid fa-globe"></i> www.lannapoly.ac.th</p>
-            </div>
-            <div>
-                <h3 style="margin-bottom: 10px;">ข้อมูลผู้จัดทำเว็บ</h3>
-                <p>จัดทำโดย: นายอภิรักษ์ มุกดา</p>
-                <p>ระดับชั้น: IT3102 เลขที่ 18</p>
-                <p>เสนอ: อาจารย์บุษราภรณ์ ทัพธานี</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>สงวนลิขสิทธิ์ © วิทยาลัยเทคโนโลยีโปลิเทคนิคลานนา เชียงใหม่</p>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>&copy; วิทยาลัยเทคโนโลยีโปลิเทคนิคลานนา เชียงใหม่</p>
         </div>
     </footer>
 
-    <!-- เชื่อมโยงไฟล์ JavaScript -->
+    <!-- JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>
