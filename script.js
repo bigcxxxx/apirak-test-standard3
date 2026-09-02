@@ -1,33 +1,35 @@
-// ฟังก์ชันสำหรับสลับแท็บหน้าจอหลัก (Site Navigation Tabs)
-function switchTab(tabId, element) {
-    const tabContents = document.querySelectorAll('.tab-content');
-    tabContents.forEach(tab => tab.classList.remove('active'));
+// สลับแท็บ Executive และ Personnel
+function switchTab(tabName) {
+    const tabs = document.querySelectorAll('.tab-content');
+    const buttons = document.querySelectorAll('.tab-btn');
 
-    const navItems = document.querySelectorAll('.nav-item');
-    navItems.forEach(item => item.classList.remove('active'));
+    tabs.forEach(tab => tab.classList.remove('active'));
+    buttons.forEach(btn => btn.classList.remove('active'));
 
-    document.getElementById(tabId).classList.add('active');
-    element.classList.add('active');
+    if (tabName === 'executives') {
+        document.getElementById('executivesTab').classList.add('active');
+        buttons[0].classList.add('active');
+    } else if (tabName === 'personnel') {
+        document.getElementById('personnelTab').classList.add('active');
+        buttons[1].classList.add('active');
+    }
 }
 
-// ฟังก์ชันค้นหาและกรองการ์ดรายชื่อบุคลากร (Personnel Filtering System)
-function filterPersonnel() {
-    const searchValue = document.getElementById('searchInput').value.toLowerCase();
-    const selectedDept = document.getElementById('departmentFilter').value;
-    const cards = document.querySelectorAll('.person-card');
+// กรองข้อมูลบุคลากรตามสาขาวิชา
+function filterDept(dept) {
+    const cards = document.querySelectorAll('#personnelGrid .card');
+    const filterBtns = document.querySelectorAll('.filter-btn');
 
+    // สลับคลาส active ของปุ่มตัวกรอง
+    filterBtns.forEach(btn => btn.classList.remove('active'));
+    event.target.classList.add('active');
+
+    // แสดง/ซ่อนการ์ดบุคลากร
     cards.forEach(card => {
-        const name = card.querySelector('.person-name').textContent.toLowerCase();
-        const role = card.querySelector('.person-role').textContent.toLowerCase();
-        const dept = card.getAttribute('data-dept');
-
-        const matchesSearch = name.includes(searchValue) || role.includes(searchValue);
-        const matchesDept = (selectedDept === 'all') || (dept === selectedDept);
-
-        if (matchesSearch && matchesDept) {
-            card.style.display = "flex";
+        if (dept === 'all' || card.getAttribute('data-dept') === dept) {
+            card.style.display = 'block';
         } else {
-            card.style.display = "none";
+            card.style.display = 'none';
         }
     });
 }
